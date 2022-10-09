@@ -1,0 +1,40 @@
+.brands {
+   background-color: var(--light-black-color);
+
+   &__container {
+      margin: 0px auto;
+      max-width: 1140px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__title {
+      position: relative;
+      margin: 60px auto 80px auto;
+      font-family: 'PlayfairDisplayBold';
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--white-color);
+
+      &::before {
+         position: absolute;
+         content: '';
+         width: 120px;
+         height: 1px;
+         bottom: -40px;
+         background-color: var(--white-color);
+         transform: translateX(85px);
+      }
+   }
+
+   &__examples {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 80px;
+   }
+
+
+}

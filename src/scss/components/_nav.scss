@@ -1,0 +1,63 @@
+.nav {
+
+   background-color: var(--light-black-color);
+
+   &__container {
+      display: flex;
+      padding: 0 var(--container-offset);
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__logo {
+      font-family: 'PostNoBillsJaffnaBold';
+      font-style: normal;
+      font-size: 36px;
+      line-height: 54px;
+      color: var(--white-color);
+   }
+
+   &__right {
+      display: flex;
+      width: 537px;
+      justify-content: space-between;
+   }
+
+   &__sections {
+      display: flex;
+   }
+
+   &__item {
+      object-fit: contain;
+      white-space: nowrap;
+      display: block;
+      padding: 31px 20px;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      color: var(--grey-color);
+   }
+
+   &__btns {
+      display: flex;
+   }
+
+   &__cart-btn {
+      fill: var(--white-color);
+      margin-right: 40px;
+
+      svg {
+         width: 22px;
+         height: 22px;
+      }
+   }
+
+   &__find-btn {
+      fill: var(--white-color);
+
+      svg {
+         width: 22px;
+         height: 22px;
+      }
+   }
+}

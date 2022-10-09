@@ -1,0 +1,51 @@
+.novelties {
+   background-color: var(--black-color);
+
+   &__title {
+      position: relative;
+      margin: 120px auto;
+      font-family: 'PlayfairDisplayBold';
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--white-color);
+
+      &::before {
+         position: absolute;
+         content: '';
+         width: 120px;
+         height: 1px;
+         bottom: -60px;
+         background-color: var(--white-color);
+         transform: translateX(160px);
+      }
+   }
+
+   &__container {
+      margin: 0px auto;
+      max-width: 1140px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__watches {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 150px;
+
+      &-row {
+         display: flex;
+      }
+
+      &-item {
+         margin-bottom: 40px;
+
+         &:not(:last-child) {
+            margin-right: 23px;
+         }
+      }
+   }
+
+}
