@@ -15,12 +15,20 @@
       font-size: 36px;
       line-height: 54px;
       color: var(--white-color);
+
+      @include small-tablet {
+         display: none;
+      }
    }
 
    &__right {
       display: flex;
       width: 537px;
       justify-content: space-between;
+
+      @include small-tablet {
+         margin: 0px auto;
+      }
    }
 
    &__sections {
@@ -36,6 +44,12 @@
       line-height: 18px;
       text-transform: uppercase;
       color: var(--grey-color);
+      transition: .3s all ease;
+
+      &:hover {
+         background-color: var(--dark-grey-color);
+         color: var(--white-color);
+      }
    }
 
    &__btns {
@@ -45,6 +59,11 @@
    &__cart-btn {
       fill: var(--white-color);
       margin-right: 40px;
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+         fill: var(--grey-color);
+      }
 
       svg {
          width: 22px;
@@ -54,6 +73,11 @@
 
    &__find-btn {
       fill: var(--white-color);
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+         fill: var(--grey-color);
+      }
 
       svg {
          width: 22px;

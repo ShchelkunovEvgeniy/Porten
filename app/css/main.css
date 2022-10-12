@@ -224,6 +224,12 @@ a {
   height: 13px;
   fill: var(--grey-color);
   margin-right: 15px;
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+.header__phone-btn:hover {
+  fill: var(--white-color);
 }
 .header__phone-btn svg {
   width: 100%;
@@ -233,6 +239,9 @@ a {
   margin-right: 30px;
   position: relative;
   color: var(--grey-color);
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 .header__phone-number::after {
   position: absolute;
@@ -242,6 +251,9 @@ a {
   top: 2px;
   right: -15px;
   background-color: var(--grey-color);
+}
+.header__phone-number:hover {
+  color: var(--white-color);
 }
 .header__mode {
   margin-right: 30px;
@@ -258,12 +270,24 @@ a {
 }
 .header__login {
   color: var(--grey-color);
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.header__login:hover {
+  color: var(--white-color);
 }
 .header__login-btn {
   width: 14px;
   height: 14px;
   margin-right: 10px;
   fill: var(--grey-color);
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+.header__login-btn:hover {
+  fill: var(--white-color);
 }
 .header__login-btn svg {
   width: 100%;
@@ -292,6 +316,11 @@ a {
   line-height: 54px;
   color: var(--white-color);
 }
+@media (max-width: 768px) {
+  .nav__logo {
+    display: none;
+  }
+}
 .nav__right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,6 +329,11 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .nav__right {
+    margin: 0px auto;
+  }
 }
 .nav__sections {
   display: -webkit-box;
@@ -316,6 +350,13 @@ a {
   line-height: 18px;
   text-transform: uppercase;
   color: var(--grey-color);
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+.nav__item:hover {
+  background-color: var(--dark-grey-color);
+  color: var(--white-color);
 }
 .nav__btns {
   display: -webkit-box;
@@ -325,6 +366,12 @@ a {
 .nav__cart-btn {
   fill: var(--white-color);
   margin-right: 40px;
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+.nav__cart-btn:hover {
+  fill: var(--grey-color);
 }
 .nav__cart-btn svg {
   width: 22px;
@@ -332,6 +379,12 @@ a {
 }
 .nav__find-btn {
   fill: var(--white-color);
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+.nav__find-btn:hover {
+  fill: var(--grey-color);
 }
 .nav__find-btn svg {
   width: 22px;
@@ -419,9 +472,24 @@ a {
   display: flex;
   height: 730px;
 }
+@media (max-width: 1024px) {
+  .collections__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+  }
+}
 .collections__top-left {
   width: 54%;
   padding: 0 15px;
+}
+@media (max-width: 1024px) {
+  .collections__top-left {
+    width: 100%;
+    height: 100%;
+  }
 }
 .collections__top-right {
   position: relative;
@@ -431,6 +499,13 @@ a {
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
+}
+@media (max-width: 1024px) {
+  .collections__top-right {
+    display: block;
+    width: 100%;
+    height: 700px;
+  }
 }
 .collections__catalog {
   position: absolute;
@@ -446,6 +521,15 @@ a {
   bottom: 100px;
   left: calc(50% - var(--catalog-width) / 2);
 }
+@media (max-width: 1024px) {
+  .collections__catalog {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    margin-top: 480px;
+  }
+}
 .collections__catalog-title {
   margin: 0px auto;
   margin-bottom: 60px;
@@ -454,6 +538,14 @@ a {
   line-height: 42px;
   text-align: center;
   text-transform: uppercase;
+}
+.collections__catalog-btn {
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.collections__catalog-btn:hover {
+  background-color: var(--dark-grey-color);
 }
 .collections__bottom {
   display: -webkit-box;
@@ -469,8 +561,18 @@ a {
   background-size: auto;
   background-repeat: no-repeat;
 }
+@media (max-width: 1024px) {
+  .collections__bottom-left {
+    display: none;
+  }
+}
 .collections__bottom-right {
   width: 54%;
+}
+@media (max-width: 1024px) {
+  .collections__bottom-right {
+    margin: 0px auto;
+  }
 }
 .collections__season {
   position: relative;
@@ -528,14 +630,54 @@ a {
 .collections__old-btn {
   display: block;
   margin: 0px auto;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.collections__old-btn:hover {
+  background-color: var(--dark-grey-color);
 }
 .collections__watches {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 0px auto;
   margin-top: 100px;
   max-width: 880px;
 }
-.collections__watches-item:not(:last-child) {
-  margin-right: 50px;
+@media (max-width: 1530px) {
+  .collections__watches {
+    max-width: 600px;
+  }
+}
+@media (max-width: 1024px) {
+  .collections__watches {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 740px;
+  }
+}
+@media (max-width: 1530px) {
+  .collections__watches-item:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .collections__watches-item {
+    margin: 0px auto;
+    margin-bottom: 40px;
+  }
+  .collections__watches-item:nth-child(3) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .watches {
@@ -564,6 +706,11 @@ a {
   height: 325px;
   background-color: var(--dark-grey-color);
   margin-bottom: 25px;
+}
+@media (max-width: 1530px) {
+  .watches-image {
+    width: 230px;
+  }
 }
 .watches-name {
   font-size: 18px;
@@ -621,12 +768,24 @@ a {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0px auto;
   margin-bottom: 150px;
+}
+@media (max-width: 1024px) {
+  .novelties__watches {
+    display: block;
+  }
 }
 .novelties__watches-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 1024px) {
+  .novelties__watches-row {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 .novelties__watches-item {
   margin-bottom: 40px;
@@ -679,10 +838,24 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 80px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.brands__img {
+  margin: 0px auto;
 }
 
 .info {
   background-image: url("../img/info-bg.jpg");
+  background-color: var(--black-color);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .info {
+    background-image: none;
+  }
 }
 .info__container {
   display: -webkit-box;
@@ -692,11 +865,31 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .info__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 
 .about {
   color: var(--white-color);
   max-width: 350px;
   margin-top: 80px;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .about {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    margin: 0px auto;
+    max-width: 100%;
+  }
 }
 .about__title {
   font-family: "PlayfairDisplayRegular";
@@ -705,15 +898,37 @@ a {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  .about__title {
+    text-align: center;
+  }
+}
 .about__descr {
   font-size: 14px;
   margin-bottom: 101px;
+}
+@media (max-width: 768px) {
+  .about__descr {
+    margin-bottom: 20px;
+  }
 }
 
 .categories {
   margin-top: 80px;
   color: var(--white-color);
   max-width: 320px;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .categories {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .categories {
+    margin: 0px auto;
+    max-width: 100%;
+  }
 }
 .categories__title {
   font-family: "PlayfairDisplayRegular";
@@ -722,20 +937,49 @@ a {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  .categories__title {
+    text-align: center;
+  }
+}
 .categories__btn {
   background-color: var(--light-black-color);
   color: var(--white-color);
   padding: 10px 20px;
   margin-bottom: 20px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 1024px) {
+  .categories__btn {
+    margin-bottom: 10px;
+  }
 }
 .categories__btn:not(:last-child) {
   margin-right: 15px;
+}
+.categories__btn:hover {
+  background-color: var(--dark-grey-color);
 }
 
 .mail {
   margin-top: 80px;
   color: var(--white-color);
   max-width: 350px;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .mail {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .mail {
+    max-width: 100%;
+    margin: 0px auto;
+    margin-bottom: 30px;
+  }
 }
 .mail__title {
   font-family: "PlayfairDisplayRegular";
@@ -743,6 +987,11 @@ a {
   line-height: 28px;
   text-transform: uppercase;
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .mail__title {
+    text-align: center;
+  }
 }
 .mail__descr {
   font-size: 14px;
@@ -753,6 +1002,12 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 768px) {
+  .mail__form {
+    margin: 0px auto;
+    max-width: 350px;
+  }
 }
 .mail__label {
   color: var(--white-color);
@@ -783,5 +1038,11 @@ a {
   background-color: var(--light-black-color);
   color: var(--white-color);
   padding: 10px 20px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.mail__btn:hover {
+  background-color: var(--dark-grey-color);
 }
 /*# sourceMappingURL=main.css.map */

@@ -33,10 +33,21 @@
    &__watches {
       display: flex;
       flex-direction: column;
+      margin: 0px auto;
       margin-bottom: 150px;
+
+      @include tablet {
+         display: block;
+      }
+
+
 
       &-row {
          display: flex;
+
+         @include tablet {
+            flex-wrap: wrap;
+         }
       }
 
       &-item {
