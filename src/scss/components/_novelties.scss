@@ -1,0 +1,89 @@
+.novelties {
+   background-color: var(--black-color);
+
+   &__title {
+      position: relative;
+      margin: 120px auto;
+      font-family: 'PlayfairDisplayBold';
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--white-color);
+      
+      @include mobile {
+         margin: 50px auto;
+      }
+
+      &::before {
+         position: absolute;
+         content: '';
+         width: 120px;
+         height: 1px;
+         bottom: -60px;
+         background-color: var(--white-color);
+         transform: translateX(160px);
+
+         @include mobile {
+            display: none;
+         }
+      }
+   }
+
+   &__container {
+      margin: 0px auto;
+      // max-width: 1200px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__watches {
+      display: flex;
+      flex-direction: column;
+      margin: 0px auto;
+      margin-bottom: 150px;
+
+      @include mobile {
+         margin-bottom: 50px;
+      }
+
+
+      &-row {
+         display: flex;
+         max-width: 1160px;
+         flex-wrap: wrap;
+         align-items: center;
+
+         @include big-mobile {
+            max-width: 290px;
+            padding: 0 15px;
+            margin: 0px auto;
+         }
+
+
+
+         // @include tablet {
+         //    flex-wrap: wrap;
+         // }
+      }
+
+      &-item {
+         margin: 0px auto;
+         margin-bottom: 40px;
+
+
+         &:not(:last-child) {
+            margin-right: 23px;
+         }
+
+
+
+         @include tablet {
+            margin: 0px auto;
+            margin-bottom: 35px;
+         }
+      }
+   }
+
+}
