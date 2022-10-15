@@ -25,6 +25,10 @@
    margin-top: 80px;
    padding: 10px;
 
+   @include big-desktop {
+      margin-top: 60px;
+   }
+
    @include tablet {
       margin-top: 30px;
    }
@@ -63,6 +67,10 @@
    color: var(--white-color);
    max-width: 320px;
    padding: 10px;
+
+   @include big-desktop {
+      margin-top: 60px;
+   }
 
    @include tablet {
       margin-top: 30px;
@@ -114,6 +122,10 @@
    max-width: 350px;
    padding: 10px;
 
+   @include big-desktop {
+      margin-top: 60px;
+   }
+
    @include tablet {
       margin-top: 30px;
    }
@@ -149,6 +161,11 @@
          margin: 0px auto;
          max-width: 350px;
       }
+
+      @include mobile {
+         max-width: 205px;
+         flex-direction: column;
+      }
    }
 
    &__label {
@@ -161,6 +178,10 @@
       opacity: 0.4;
       color: var(--white-color);
       padding: 10px;
+
+      @include mobile {
+         margin-bottom: 20px;
+      }
    }
 
    ::placeholder {
@@ -172,21 +193,13 @@
       color: var(--white-color);
       padding: 10px 20px;
       transition: background-color .3s ease-in-out;
+      
+      @include mobile {
+         max-width: 205px;
+      }
 
       &:hover {
          background-color: var(--dark-grey-color);
       }
    }
 }
-
-.form {}
-
-.mail__form {}
-
-.form__label {}
-
-.input-reset {}
-
-.form__input {}
-
-.form__btn {}

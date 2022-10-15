@@ -22,6 +22,12 @@
       color: var(--white-color);
       border: 4px solid var(--white-color);
 
+      @include mobile {
+         width: 280px;
+         height: 280px;
+         padding: 53px 45px;
+      }
+
       &-top {
          position: relative;
          font-family: 'PostNoBillsJaffnaBold';

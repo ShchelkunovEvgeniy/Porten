@@ -83,11 +83,13 @@
 
    &__bottom {
       display: flex;
-      height: 600px;
+      min-height: 600px;
+
+
 
       &-left {
          width: 46%;
-         height: 100%;
+         height: 600px;
          background-image: url('../img/collections-bg2.jpg');
          background-position: center;
          background-size: auto;
@@ -102,8 +104,10 @@
          width: 54%;
 
          @include tablet {
+            display: inline-block;
             margin: 0px auto;
          }
+
       }
    }
 
@@ -131,6 +135,8 @@
 
    &__old {
       padding: 100px 0;
+      min-height: 600px;
+
 
       &-title {
          position: relative;
@@ -148,7 +154,11 @@
             height: 1px;
             bottom: -50px;
             background-color: var(--white-color);
-            transform: translateX(70px);
+            transform: translateX(90px);
+
+            @include big-mobile {
+               display: none;
+            }
          }
       }
 
@@ -234,10 +244,6 @@
       height: 325px;
       background-color: var(--dark-grey-color);
       margin-bottom: 25px;
-
-      @include big-desktop {
-         width: 230px;
-      }
    }
 
    &-name {

@@ -85,3 +85,16 @@
       }
    }
 }
+
+.burger {
+   @include burger;
+   display: none;
+   --burger-width: 24px;
+   --burger-height: 18px;
+   --burger-line-height: 3px;
+   color: var(--white-color);
+ 
+   @include tablet {
+     display: block;
+   }
+ }

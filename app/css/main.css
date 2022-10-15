@@ -391,6 +391,97 @@ a {
   height: 22px;
 }
 
+.burger {
+  --burger-width: 30px;
+  --burger-height: 30px;
+  --burger-line-height: 2px;
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  --burger-width: 24px;
+  --burger-height: 18px;
+  --burger-line-height: 3px;
+  color: var(--white-color);
+}
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--burger-line-height);
+  background-color: currentColor;
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.burger::before {
+  top: 0;
+}
+.burger::after {
+  top: calc(100% - var(--burger-line-height));
+}
+.burger__line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: var(--burger-line-height);
+  background-color: currentColor;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.burger--active::before {
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.burger--active::after {
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.burger--active .burger__line {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+@media (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
+}
+
 .hero {
   background-image: url("../img/hero-bg.jpg");
   background-position: center;
@@ -418,6 +509,13 @@ a {
   margin-bottom: 80px;
   color: var(--white-color);
   border: 4px solid var(--white-color);
+}
+@media (max-width: 576px) {
+  .hero__logo {
+    width: 280px;
+    height: 280px;
+    padding: 53px 45px;
+  }
 }
 .hero__logo-top {
   position: relative;
@@ -551,11 +649,11 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 600px;
+  min-height: 600px;
 }
 .collections__bottom-left {
   width: 46%;
-  height: 100%;
+  height: 600px;
   background-image: url("../img/collections-bg2.jpg");
   background-position: center;
   background-size: auto;
@@ -571,6 +669,7 @@ a {
 }
 @media (max-width: 1024px) {
   .collections__bottom-right {
+    display: inline-block;
     margin: 0px auto;
   }
 }
@@ -598,6 +697,7 @@ a {
 }
 .collections__old {
   padding: 100px 0;
+  min-height: 600px;
 }
 .collections__old-title {
   position: relative;
@@ -615,9 +715,14 @@ a {
   height: 1px;
   bottom: -50px;
   background-color: var(--white-color);
-  -webkit-transform: translateX(70px);
-  -ms-transform: translateX(70px);
-  transform: translateX(70px);
+  -webkit-transform: translateX(90px);
+  -ms-transform: translateX(90px);
+  transform: translateX(90px);
+}
+@media (max-width: 595px) {
+  .collections__old-title::before {
+    display: none;
+  }
 }
 .collections__old-descr {
   margin: 0px auto;
@@ -707,11 +812,6 @@ a {
   background-color: var(--dark-grey-color);
   margin-bottom: 25px;
 }
-@media (max-width: 1530px) {
-  .watches-image {
-    width: 230px;
-  }
-}
 .watches-name {
   font-size: 18px;
   line-height: 21px;
@@ -737,6 +837,11 @@ a {
   text-transform: uppercase;
   color: var(--white-color);
 }
+@media (max-width: 576px) {
+  .novelties__title {
+    margin: 50px auto;
+  }
+}
 .novelties__title::before {
   position: absolute;
   content: "";
@@ -748,9 +853,13 @@ a {
   -ms-transform: translateX(160px);
   transform: translateX(160px);
 }
+@media (max-width: 576px) {
+  .novelties__title::before {
+    display: none;
+  }
+}
 .novelties__container {
   margin: 0px auto;
-  max-width: 1140px;
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -771,27 +880,41 @@ a {
   margin: 0px auto;
   margin-bottom: 150px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 576px) {
   .novelties__watches {
-    display: block;
+    margin-bottom: 50px;
   }
 }
 .novelties__watches-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1160px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-@media (max-width: 1024px) {
+@media (max-width: 595px) {
   .novelties__watches-row {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    max-width: 290px;
+    padding: 0 15px;
+    margin: 0px auto;
   }
 }
 .novelties__watches-item {
+  margin: 0px auto;
   margin-bottom: 40px;
 }
 .novelties__watches-item:not(:last-child) {
   margin-right: 23px;
+}
+@media (max-width: 1024px) {
+  .novelties__watches-item {
+    margin: 0px auto;
+    margin-bottom: 35px;
+  }
 }
 
 .brands {
@@ -880,6 +1003,11 @@ a {
   margin-top: 80px;
   padding: 10px;
 }
+@media (max-width: 1530px) {
+  .about {
+    margin-top: 60px;
+  }
+}
 @media (max-width: 1024px) {
   .about {
     margin-top: 30px;
@@ -918,6 +1046,11 @@ a {
   color: var(--white-color);
   max-width: 320px;
   padding: 10px;
+}
+@media (max-width: 1530px) {
+  .categories {
+    margin-top: 60px;
+  }
 }
 @media (max-width: 1024px) {
   .categories {
@@ -969,6 +1102,11 @@ a {
   max-width: 350px;
   padding: 10px;
 }
+@media (max-width: 1530px) {
+  .mail {
+    margin-top: 60px;
+  }
+}
 @media (max-width: 1024px) {
   .mail {
     margin-top: 30px;
@@ -1009,6 +1147,15 @@ a {
     max-width: 350px;
   }
 }
+@media (max-width: 576px) {
+  .mail__form {
+    max-width: 205px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .mail__label {
   color: var(--white-color);
 }
@@ -1018,6 +1165,11 @@ a {
   opacity: 0.4;
   color: var(--white-color);
   padding: 10px;
+}
+@media (max-width: 576px) {
+  .mail__input {
+    margin-bottom: 20px;
+  }
 }
 .mail ::-webkit-input-placeholder {
   color: var(--white-color);
@@ -1041,6 +1193,11 @@ a {
   -webkit-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 576px) {
+  .mail__btn {
+    max-width: 205px;
+  }
 }
 .mail__btn:hover {
   background-color: var(--dark-grey-color);
