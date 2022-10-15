@@ -252,12 +252,22 @@ a {
   right: -15px;
   background-color: var(--grey-color);
 }
+@media (max-width: 576px) {
+  .header__phone-number::after {
+    display: none;
+  }
+}
 .header__phone-number:hover {
   color: var(--white-color);
 }
 .header__mode {
   margin-right: 30px;
   position: relative;
+}
+@media (max-width: 576px) {
+  .header__mode {
+    display: none;
+  }
 }
 .header__mode::after {
   position: absolute;
@@ -267,6 +277,11 @@ a {
   top: 2px;
   right: -15px;
   background-color: var(--grey-color);
+}
+@media (max-width: 576px) {
+  .header__hours {
+    display: none;
+  }
 }
 .header__login {
   color: var(--grey-color);
@@ -301,6 +316,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 80px;
   padding: 0 var(--container-offset);
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -340,6 +356,26 @@ a {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 576px) {
+  .nav__sections {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    padding: 50px;
+  }
+  .nav__sections--active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .nav__item {
   -o-object-fit: contain;
   object-fit: contain;
@@ -354,6 +390,15 @@ a {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
+@media (max-width: 576px) {
+  .nav__item {
+    background-color: var(--dark-grey-color);
+    margin-bottom: 20px;
+    width: 150px;
+    padding: 25px 15px;
+    text-align: center;
+  }
+}
 .nav__item:hover {
   background-color: var(--dark-grey-color);
   color: var(--white-color);
@@ -362,6 +407,13 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 576px) {
+  .nav__btns {
+    position: absolute;
+    top: 75px;
+    right: 15px;
+  }
 }
 .nav__cart-btn {
   fill: var(--white-color);
@@ -403,7 +455,9 @@ a {
   color: #000;
   background-color: transparent;
   cursor: pointer;
+  position: fixed;
   display: none;
+  z-index: 1000;
   --burger-width: 24px;
   --burger-height: 18px;
   --burger-line-height: 3px;
@@ -476,9 +530,10 @@ a {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
-@media (max-width: 1024px) {
+@media (max-width: 576px) {
   .burger {
     display: block;
+    top: 75px;
   }
 }
 

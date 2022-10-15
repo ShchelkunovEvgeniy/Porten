@@ -152,10 +152,10 @@ function enableScroll() {
 }
 
 const burger = document.querySelector('.burger');
-const menu = document.querySelector('.header__nav');
+const menu = document.querySelector('.nav__sections');
 burger.addEventListener('click', () => {
   burger.classList.toggle('burger--active');
-  menu.classList.toggle('header__nav--active');
+  menu.classList.toggle('nav__sections--active');
 
   if (burger.classList.contains('burger--active')) {
     disableScroll();

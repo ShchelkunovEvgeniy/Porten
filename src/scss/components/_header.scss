@@ -56,6 +56,10 @@
             top: 2px;
             right: -15px;
             background-color: var(--grey-color);
+
+            @include mobile {
+               display: none;
+            }
          }
 
          &:hover {
@@ -68,6 +72,10 @@
       margin-right: 30px;
       position: relative;
 
+      @include mobile {
+         display: none;
+      }
+
       &::after {
          position: absolute;
          content: "";
@@ -79,9 +87,19 @@
       }
    }
 
+   &__hours {
+      @include mobile {
+         display: none;
+      }
+   }
+
    &__login {
       color: var(--grey-color);
       transition: color .3s ease-in-out;
+
+      @include mobile {
+         
+      }
 
       &:hover {
          color: var(--white-color);
